@@ -42,7 +42,6 @@ small.infoBar {
  
 h1 {
   margin-bottom: 0px;
-  coulor: #FFAA00;
 } 
 
 section {
@@ -60,13 +59,12 @@ section.pictures {
 }
 
 img {
-  border: 1px dashed #ccc;
-  border-radius: 5px;
+  border: 2px groove #0099cc;
   display: block;
   margin: auto;
   width: 500px;
 }
 
 h1:hover {
-  color: #99AA00;
+  color: #0099cc;
 }
