@@ -29,6 +29,14 @@ a.rightMost {
   padding-left: 10px;
 }
 
+a.title:hover {
+  color: #0099cc;
+}
+
+a.title {
+  color: #DDDDDD;
+}
+
 header {
   text-align: center;
   border-bottom: 5px groove #888;
@@ -65,6 +73,3 @@ img {
   width: 500px;
 }
 
-h1:hover {
-  color: #0099cc;
-}
