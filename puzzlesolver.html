@@ -12,7 +12,7 @@
     <h3> 8-Puzzle Solver</h3>
     
     <small class="infoBar">
-      <a class="boxed" href="https://github.com/theoxo/8gamesolver_end_user" target="_blank">End user software source coder</a>
+      <a class="boxed" href="https://github.com/theoxo/8gamesolver_end_user" target="_blank">End user software source code</a>
       <a class="rightMost" href="https://github.com/theoxo/8gamesolver_xml" target="_blank">XML generator source code</a>
     </small>
   </header>
@@ -31,7 +31,7 @@
     <h3> Implementation </h3>
     <ul>
       <li> <h4> End User Software </h4> 
-        <p>  As mentioned earlier the actual search and generation algorithm is quite stupid. <br> In essence, the code consists of three classes: the first, <i>Board</i>, ensures that the string representations of board states are valid and well formed, and also handles the generation of the next possible states; the second, <i>MyTreeNode</i>, is exactly what one might expect, with some added functions for fully traversing the tree upwards, and locating pointers to specific nodes; and finally the third class, aptly named <i>MainClass</i>, is where the magic happens. It is mainly the last one of these that has gone through multiple iterations. <br>Originally, due to lack of smarter ideas, it first generated the full tree of possible states using recursion, before then searching for the requested state in that tree. Pros: It always ran in roughly the same amount of time. Cons: That amount of time was roughly an hour (<i> and the tree was both very deep and narrow </i>) ((<i>and you had to run it with -Xss100m to not overflow the stack</i>)).
+        <p>  As mentioned earlier the actual search and generation algorithm is quite stupid. <br> In essence, the code consists of three classes: the first, <i>Board</i>, ensures that the string representations of board states are valid and well formed, and also handles the generation of the next possible states; the second, <i>MyTreeNode</i>, is exactly what one might expect, with some added functions for fully traversing the tree upwards, and locating pointers to specific nodes; and finally the third class, aptly named <i>MainClass</i>, is where the magic happens. It is mainly the last one of these that has gone through multiple iterations. <br>Originally, due to lack of smarter ideas, it first generated the full tree of possible states using recursion, before then searching for the requested state in that tree. Pros: It always ran in roughly the same amount of time. Cons: That amount of time was roughly an hour <i>(and the tree was both very deep and narrow) ((and you had to run it with -Xss100m to not overflow the stack))</i>.
         <br> In its current state, I have instead chosen to load the tree using a queue based system rather than recursion, and to dynamically search the tree as it's being generated. Furthermore, the code is now way more user friendly (see the patch notes for <i>version 1.1</i> on Github). Pros: Looks nice. Says goodbye like your gran always told you a good program should. Most often runs in a matter of seconds. Cons: If the user choses not to enfore a time out and enters an unreachable state, the program still runs for roughly an hour before figuring out it's not gonna be able to solve the puzzle. Still not very smart.
         </p> 
       </li>
