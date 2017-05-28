@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Puzzle Solver — Theo Xavier Olausson </title> 
+    <title> 8-Puzzle Solver — Theo Xavier Olausson </title> 
     <meta charset="UTF-8"> 
     <meta name="description" content="Theo Xavier Olausson is a BSc Computer Science student at the University of Edinburgh.">
     <link href="main.css" type="text/css" rel="stylesheet">
@@ -9,36 +9,36 @@
 <body>
   <header>
     <h1> <a class="title" href="https://theoxo.github.io">THEO XAVIER OLAUSSON</a> </h1>
-    <h3> Graphing Calculator (Java)</h3>
+    <h3> 8-Puzzle Solver</h3>
     
     <small class="infoBar">
-      <a class="boxed" href="https://www.linkedin.com/in/theo-xavier-olausson-10a531138/" target="_blank">LinkedIn</a>
-      <a class="rightMost" href="https://github.com/theoxo/Basic-Graphing-Calculator-Java-" target="_blank">source code</a>
+      <a class="boxed" href="https://github.com/theoxo/8gamesolver_end_user" target="_blank">End user software source coder</a>
+      <a class="rightMost" href="https://github.com/theoxo/8gamesolver_xml" target="_blank">XML generator source code</a>
     </small>
   </header>
   
   <section>
     <ul>
-      <li> November 2015 - March 2016 </li>
-      <li> approx. 75+ hours of research and work </li>
+      <li> March 2017 - May 2017 </li>
+      <li> approx. 20-25 hours of work total (loose estimate)</li>
     </ul>
-    <p> This was my diploma project in my final year of high school <a href="http://www.skolverket.se/skolformer/gymnasieutbildning/gymnasieskola/gymnasiearbetet" target="_blank">(more information on diploma projects in Swedish high schools available here)</a>. Two of my classmates and I set out to create a graphing calculator based off a Raspberry Pi, and I was made solely responsible for creating the software while they worked on the casing. <br><br>
-        The entirety of the code was written in Java, with the help of the NetBeans IDE to create the necessary menu structure. In the end the code ended up both  messy and inefficient (and, honestly speaking, ridden with bugs), but I was nonetheless proud to have completed the task as this was not only my first large scale programming project, but also the first time I had created a piece of software from the ground up. <br><br>
-        The project taught me a lot about programming, both in Java specifically and in general. I was very much a novice when we started out so I had to learn a lot of the concepts and techniques as I was going, essentially meaning even the smallest of tasks took a lot of brain-storming and effort to figure out. It was both a very demanding and fun process!<br>
-  </section>
-  
-  <section>
-    <h2> Finished Product </h2>
-    <p> Though we ultimately failed to produce a final product as we did not have the means to create the casing, the software ran successfully on the Raspberry Pi. It wasn't neccessarily very pretty (<i> *cough* </i>) but interacting with it using the touchscreen we connected was as effortless as we had hoped for. <br><br>
-        Unfortunately I do not have any pictures of the unit itself, but the following are screengrabs highlighting some parts of the final software:
-    </p>
+    <p> This was a short side project that I started working on after having had to solve multiple configurations of an "8-puzzle" in a maths homework, after first having proven they were solvable. Shocked by the preposterous idea of having to spend my precious time doing measly things such as puzzle solving (<i>please note: sarcasm</i>), I decided to boot up IntelliJ with the hopes of making my computer do it for me.</p>
+      <p> I didn't manage to finish it in time to save me from the minutes of work that solving the puzzle entailed, however I continued to work on it whenever I had a bit of time to spare. Thus what initially was planned to be a short script ended up being a few hundred lines of code that went through multiple iterations before finally resulting in both an end user software that locates the requested state and then gives the user the solution, and a version that generates a full XML tree of all reachable states (which of course is not very useful at all until the day I create a front end for interacting with it). </p>
+    <br><p> Note that the implementation is relatively stupid and does <i>not</i> currently implement an A* search algorithm or similar. One might ask why that is... Sadly I do not have a better answer than to point to my own ignorance.</p>
   </section>
 
-  <section class="pictures">
-    <br>
-    <img src="pictures/mainUI.png" alt="main UI of the graphing calculator">Main grapher</img>
-    <img src="pictures/calc.png" alt="pure calculator UI">"Pure" calculator mode</img>
-    <img src="pictures/settings.png" alt="Settings UI">A pop-up settings frame</img>
+  <section>
+    <h3> Implementation </h3>
+    <ul>
+      <li> <h4> End User Software </h4> 
+        <p>  As mentioned earlier the actual search and generation algorithm is quite stupid. <br> In essence, the code consists of three classes: the first, <i>Board</i>, ensures that the string representations of board states are valid and well formed, and also handles the generation of the next possible states; the second, <i>MyTreeNode</i>, is exactly what one might expect, with some added functions for fully traversing the tree upwards, and locating pointers to specific nodes; and finally the third class, aptly named <i>MainClass</i>, is where the magic happens. It is mainly the last one of these that has gone through multiple iterations. <br>Originally, due to lack of smarter ideas, it first generated the full tree of possible states using recursion, before then searching for the requested state in that tree. Pros: It always ran in roughly the same amount of time. Cons: That amount of time was roughly an hour (<i> and the tree was both very deep and narrow </i>) ((<i>and you had to run it with -Xss100m to not overflow the stack</i>)).
+        <br> In its current state, I have instead chosen to load the tree using a queue based system rather than recursion, and to dynamically search the tree as it's being generated. Furthermore, the code is now way more user friendly (see the patch notes for <i>version 1.1</i> on Github). Pros: Looks nice. Says goodbye like your gran always told you a good program should. Most often runs in a matter of seconds. Cons: If the user choses not to enfore a time out and enters an unreachable state, the program still runs for roughly an hour before figuring out it's not gonna be able to solve the puzzle. Still not very smart.
+        </p> 
+      </li>
+      <li> <h4> XML Generator </h4>
+        <p> This version is more or less a (slightly lazy) hack of the end user software, difference being that it now does <i> not </i> look for some requested state at all, but rather just generates the full tree of possible states and then saves it as an XML file. It does this by building a full DOM alongside the <i>MyTreeNode</i> tree (Why the overlap? Well, that way I didn't have to rewrite any of the tree logic!), using XPath and standard DOM functions for navigating around the tree and adding the right attribute (state) to the right node(s). Finally, as one might expect, it then uses a <i>Transformer</i> to turn the DOM into a .xml file. This takes a few hours on the UoE computing server; I do not even want to think about how long it would take my poor laptop to do it. </p>
+      </li>
+    </ul>
   </section>
   
 </body>
