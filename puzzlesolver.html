@@ -36,7 +36,7 @@
         </p> 
       </li>
       <li> <h4> XML Generator </h4>
-        <p> This version is more or less a (slightly lazy) hack of the end user software, difference being that it now does <i> not </i> look for some requested state at all, but rather just generates the full tree of possible states and then saves it as an XML file. It does this by building a full DOM alongside the <i>MyTreeNode</i> tree (Why the overlap? Well, that way I didn't have to rewrite any of the tree logic!), using XPath and standard DOM functions for navigating around the tree and adding the right attribute (state) to the right node(s). Finally, as one might expect, it then uses a <i>Transformer</i> to turn the DOM into a .xml file. <br><br>Running this takes a few hours on the UoE computing server; I do not even want to think about how long it would take my poor laptop to do it. </p>
+        <p> This version is more or less a (<strike>slightly</strike> lazy) hack of the end user software, difference being that it now does <i> not </i> look for some requested state at all, but rather just generates the full tree of possible states and then saves it as an XML file. It does this by building a full DOM alongside the data tree, using XPath and standard DOM functions for navigating around the tree and adding the right attribute (state) to the right node(s). Finally, as one might expect, it then uses a <i>Transformer</i> to turn the DOM into a .xml file. <br><br>Running this takes a few hours on the UoE computing server; I do not even want to think about how long it would take my poor laptop to do it. </p>
       </li>
     </ul>
   </section>
