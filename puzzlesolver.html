@@ -8,34 +8,33 @@
   </head>
 <body>
   <header>
-    <h1> <a class="title" href="https://theoxo.github.io">THEO XAVIER OLAUSSON</a> </h1>
-    <h3> 8-Puzzle Solver</h3>
+    <h1> <a class="title hvr-sweep-to-top" href="https://theoxo.github.io">THEO XAVIER OLAUSSON</a> </h1>
     
     <small class="infoBar">
-      <a class="boxed" href="https://github.com/theoxo/8gamesolver_end_user" target="_blank">End user software source code</a>
-      <a class="rightMost" href="https://github.com/theoxo/8gamesolver_xml" target="_blank">XML generator source code</a>
+      <a class="boxed hvr-sweep-to-bottom" href="https://github.com/theoxo/8gamesolver_end_user" target="_blank">End user software source code</a>
+      <a class="boxed hvr-sweep-to-bottom" href="https://github.com/theoxo/8gamesolver_xml" target="_blank">XML generator source code</a>
     </small>
   </header>
   
   <section>
+  <h3 class="subtitle"><mark> 8-Puzzle Solver</mark></h3>
     <ul>
       <li> April 2017 - May 2017 </li>
-      <li> approx. 20-25 hours of work total (loose estimate)</li>
     </ul>
-    <p> This was a short side project that I started working on after having had to solve multiple configurations of an "8-puzzle" in a maths homework (after first having proven they were solvable). </p>
+    <p> This was a short project that I started working on after having had to solve multiple configurations of an "8-puzzle" in a maths homework (after first having proven they were solvable). </p>
       <p> I didn't manage to finish it in time to save me from the minutes of work that solving the puzzle entailed, however I continued to work on it whenever I had a bit of time to spare. Thus what initially was planned to be a short script ended up being a few hundred lines of code that went through multiple iterations before finally resulting in both an end user version that locates the requested state and then gives the user the solution, and a developer version that generates a full XML tree of all reachable states (which of course is not very useful at all until the day I create a front end for interacting with it). </p>
     <p> Note that the current implementation does <i>not</i> incorporate an A* algorithm or similar.</p>
   </section>
 
   <section>
-    <h3> Implementation </h3>
+    <h3><mark> Implementation </mark></h3>
     <ul>
-      <li> <h4> End User Software </h4> 
+      <li> <h4><mark> End User Software </mark></h4> 
         <p>  In essence, the code consists of three classes: the first, <i>Board</i>, ensures that the string representations of board states are valid and well formed, and also handles the generation of the next possible states; the second, <i>MyTreeNode</i>, is exactly what one might expect, with some added functions for fully traversing the tree upwards, and locating pointers to specific nodes; and finally the third class, aptly named <i>MainClass</i>, is where the magic happens. It is mainly the last one of these that has gone through multiple iterations. <br><br>Originally, due to a lack of better ideas, it first generated the full tree of possible states using recursion, before then searching for the requested state in that tree. <br>Pros: It always ran in about the same amount of time. <br>Cons: That amount of time was roughly an hour <i>(and the tree was both very deep and narrow) ((and you had to run it with -Xss100m to not overflow the stack))</i>.
-        <br> <br>In its current state, I have instead chosen to load the tree using a queue based system rather than recursion, and to dynamically search the tree as it's being generated. Furthermore, the code is now way more user friendly (see the patch notes for <i>version 1.1</i> on Github). <br>Pros: Looks nice. Says goodbye like your gran always told you a good program should. Most often runs in a matter of seconds. <br>Cons: If the user chooses not to enfore a time out and enters an unreachable state, the program still runs for roughly an hour before figuring out it's not gonna be able to solve the puzzle. So, still not very smart.
+        <br> <br>In its current state, I have instead chosen to load the tree using a queue based system rather than recursion, and to dynamically search the tree as it's being generated. Furthermore, the code is now way more user friendly (see the <a target="_blank" href="https://github.com/theoxo/8gamesolver_end_user/blob/master/README.md">patch notes</a> for <i>version 1.1</i> on Github). <br>Pros: Looks nice. Says goodbye like your gran always told you a good program should. Most often runs in a matter of seconds. <br>Cons: If the user chooses not to enfore a time out and enters an unreachable state, the program still runs for roughly an hour before figuring out it's not gonna be able to solve the puzzle. So, still not very smart.
         </p> 
       </li>
-      <li> <h4> XML Generator </h4>
+      <li> <h4><mark> XML Generator </mark></h4>
         <p> This version is more or less a (<strike>slightly</strike> lazy) hack of the end user software, difference being that it now does <i> not </i> look for some requested state at all, but rather just generates the full tree of possible states and then saves it as an XML file. It does this by building a full DOM alongside the data tree, using XPath and standard DOM functions for navigating around the tree and adding the right attribute (state) to the right node(s). Finally, as one might expect, it then uses a <i>Transformer</i> to turn the DOM into a .xml file. <br><br>Running this takes a few hours on the UoE computing server; I do not even want to think about how long it would take my poor laptop to do it. </p>
       </li>
     </ul>
