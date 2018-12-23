@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Theo Olausson | Contact
+title: Theo Olausson
 subtitle: Contact
 ---
 <p> You can email me on: {my first name} followed by the letter x followed
