@@ -27,16 +27,6 @@ a:hover {
   color:#757575;
 }
 
-header {
-  text-align: center;
-  border-bottom: 5px groove #888;
-  font-family: serif;
-}
-
-.subtitle {
-  text-align: center;
-}
-
 h1 {
   margin-bottom: 0px;
 } 
@@ -49,7 +39,7 @@ li {
 
 mark {
   background-color:#CAEBF2;
-  color: #757575;
+  color: #B5B5B5;
 }
 
 p {
