@@ -3,6 +3,5 @@ layout: default
 title: Theo Olausson
 subtitle: Contact
 ---
-<p> You can email me on: {my first name} followed by the letter x followed
-    by {my surname} at Google's popular email domain.
+<p> You can email me on: theo at this domain.
 </p>
