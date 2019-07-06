@@ -1,6 +1,6 @@
 ---
 layout: default
-title: A Layman's Introduction to Memory Consistency
+title: Theo Olausson
 subtitle: A Layman's Introduction to Memory Consistency
 ---
 <p>
