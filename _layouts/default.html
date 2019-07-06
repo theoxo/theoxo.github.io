@@ -7,19 +7,22 @@
       <link rel="stylesheet" type="text/css" href="/assets/main.css">
     </head>
     <body>
-      <nav>
+      <div id="app" class="wrapper">
+      <header>
+        <img src="/assets/me.png" style="border-radius: 50%;"><br/>
+        <h1>Theo X Olausson</h1>
         <ul>
             <li><a href="/"><i class="material-icons">home</i>Home</a></li>
+            <li><a href="/blog"><i class="material-icons">library_books</i>Blog</a></li>
             <li><a href="/contact"><i class="material-icons">email</i>Contact</a></li>
-            <li><a href="https://github.com/theoxo" target="_blank">
-              <i class="material-icons">code</i>GitHub</a></li>
-            <li><a href="/assets/resume.pdf" target="_blank">
-                <i class="material-icons">description</i>CV/resume</a></li>
         </ul>
-      </nav>
-      <div class="container">
+      </header>
+      <section>
       <h1> {{ page.subtitle | upcase }} </h1>
       {{ content }}
-      </div>
+      </section>
+      <footer>
+        Theme based on <a href="https://orderedlist.com/minimal/">Minimal by orderedlist</a>.
+      </footer>
     </body>
   </html>

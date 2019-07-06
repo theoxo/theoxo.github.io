@@ -1,6 +1,4 @@
 title: Theo Olausson
 markdown: kramdown
 collections:
-  portfolio:
-    output: true
-    permalink: /portfolio/:path/
+  - posts
