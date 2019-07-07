@@ -41,7 +41,7 @@ The simplest memory consistency model one can device is Strict Consistency, whic
   <li> Every processor carries out its memory accesses in the order they appear in the program (often dubbed program order); </li>
   <li> All writes are made visible to all processors instantaneously.</li>
 </ol>
-However this is not very interesting as it is of course impossible to actually implement: the electricity can only travel so fast, so given that we need to physically connect the different processors togetherit becomes impossible to meet Strict Consistency's second criteria. It's first, however, is quite intuitive and therefore lies at the heart of our next model, Sequential Consistency.
+However this is not very interesting as it is of course impossible to actually implement: the electricity can only travel so fast, so given that we need to physically connect the different processors together it becomes impossible to meet Strict Consistency's second criteria. Its first, however, is quite intuitive and therefore lies at the heart of our next model, Sequential Consistency.
 </p>
 
 <p>
