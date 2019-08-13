@@ -2,9 +2,10 @@
 layout: default
 title: Theo Olausson
 subtitle: A Layman's Introduction to Memory Consistency
+topics: [computer-architecture, tutorial]
 ---
 <p>
-Last Christmas I was reading <a href="https://dl.acm.org/citation.cfm?id=2028905"><i>A primer on memory consistency and cache coherence</i></a> in preparation for an internship. It’s a brilliant book, and covers both memory consistency and cache coherence–two fundamental aspects of modern computer architecture–in great detail. There was however one slight issue: <b>I was getting none (or at least very little) of it</b>, especially the memory consistency chapters. Now, a year and a half later, I feel as if I am finally getting the hang of it, and today I therefore wanted to offer you a perhaps slightly more accessible introduction to the topic.
+Last Christmas I was reading <a href="https://dl.acm.org/citation.cfm?id=2028905"><em>A primer on memory consistency and cache coherence</em></a> in preparation for an internship. It’s a brilliant book, and covers both memory consistency and cache coherence–two fundamental aspects of modern computer architecture–in great detail. There was however one slight issue: <b>I was getting none (or at least very little) of it</b>, especially the memory consistency chapters. Now, a year and a half later, I feel as if I am finally getting the hang of it, and today I therefore wanted to offer you a perhaps slightly more accessible introduction to the topic.
 </p>
 
 <h3>What is Memory Consistency and what is a Memory Consistency Model?</h3>
@@ -18,13 +19,13 @@ D.J. Sorin, M.D. Hill, D.A. Wood: "A primer on memory consistency and cache cohe
 <br>
 <p>
 Clearly, memory consistency is the act of keeping memory consistent, but
-what exactly do we mean by <i>consistent</i>? To me, there are two criteria for shared memory
+what exactly do we mean by <em>consistent</em>? To me, there are two criteria for shared memory
 to be considered consistent:
 <ol>
   <li> Given the program, it is at any given time possible to reason <b> accurately</b>, though perhaps <b> not precisely</b>, about what state the memory is in. </li>
   <li> There are mechanisms to narrow the precision of this if needed. </li>
 </ol>
-Reasonably, we then need to define some form of <i> model </i> to help us achieve this. Specifically, this model should tell us in no uncertain terms what behaviour is–and what isn't– allowed in a multi-threaded, shared-memory environment,
+Reasonably, we then need to define some form of <em> model </em> to help us achieve this. Specifically, this model should tell us in no uncertain terms what behaviour is–and what isn't–allowed in a multi-threaded, shared-memory environment,
 so that we can use this model, compare our program to it, and figure out what possible outcomes are permitted by the hardware.
 </p>
 <p>
@@ -63,7 +64,7 @@ Suppose you’re preparing to cook a nice meal together with your partner. Howev
 Similarly, if a processor wants to write to an address A and then read from an address B, chances are it doesn’t actually need that write to A to finish (i.e. be visible to all processors) before it executes the read from B. This is the motivation for Total Store Order and Processor Consistency, which both permit a processor to re-order its own reads before its own writes.
 </p>
 <p>
-However, sometimes it may indeed be that you must nonetheless wait, just as you might think it to be a good idea to wait for your partner to come home with the can of tomatoes before you put the beans into your chilli. (If you recall our discussion on memory consistency before, this is where the second criteria for consistent memory comes in!) To get this level of control back, we introduce a special instruction–typically called a fence or a barrier– which simply guarantees that any memory access placed before the barrier will have finished before anything after the barrier is executed. (<i>Simple exercise for the reader: how can we use this special instruction to enforce SC behaviour on a TSO system (or indeed any system supporting such instructions)?</i>) Note that just like you would when waiting for that can of tomatoes, the processor might have to sit still for quite some time before moving on from this fence in order to give all the memory accesses time to finish, and thus any such barrier carries performance overhead.
+However, sometimes it may indeed be that you must nonetheless wait, just as you might think it to be a good idea to wait for your partner to come home with the can of tomatoes before you put the beans into your chilli. (If you recall our discussion on memory consistency before, this is where the second criteria for consistent memory comes in!) To get this level of control back, we introduce a special instruction–typically called a fence or a barrier– which simply guarantees that any memory access placed before the barrier will have finished before anything after the barrier is executed. (<em>Simple exercise for the reader: how can we use this special instruction to enforce SC behaviour on a TSO system (or indeed any system supporting such instructions)?</em>) Note that just like you would when waiting for that can of tomatoes, the processor might have to sit still for quite some time before moving on from this fence in order to give all the memory accesses time to finish, and thus any such barrier carries performance overhead.
 </p>
 <p>
 <h4>The extremists: Relaxed consistency models</h4>
@@ -94,7 +95,7 @@ Ouch! This largely follows from the fact that specifications are often (even to 
 Nonetheless, as the title of the paper might suggest, it turns out that x86 is “kind of” like TSO (and kind of not), which the authors show with the help of a series of litmus tests (very, very short programs ran many times over on the processor to see which ordering of accesses is possible). We thus expect x86 to support a fence instruction, and indeed it does: aptly named mfence, the instruction guarantees that all memory accesses before the mfence become globally visible before any of the instructions which follow it do. In order to avoid the full overhead of a mfence when only parts of its functionality are actually required, x86 also supports lfence and sfence, ordering only loads and stores (respectively).
 </p>
 <p>
-ARM’s architecture(s), like the ARMv8 64-bit, fall on the weak end of the spectrum. Largely allowing any reordering unless the operations are implicitly ordered by certain dependencies, the architecture demands special care from the programmer in exchange for promises of great efficiency. (Perhaps tis is because ARM first saw success targeting mobile computers such as smartphones, while Intel and AMD have for a long time focused on stationary computing, where performance (at least power consumption) is not as critical.) As a result, the ARMv8 architecture supports many types of barriers–the DataMemoryBarrier (extending only to the local caches), DataSystemBarrier (reaching all the way to the point of coherency, i.e. synchronizing over all the connect cores) and the InstructionSynchronizationBarrier (affecting only the loading of instructions onto the CPU)–many of which also take arguments indicating whether they should apply to loads, stores, or both. In comparison to x86, programming on ARM is thus more complex, but the gain lies in the performance of the chip.
+ARM’s architecture(s), like the ARMv8 64-bit, fall on the weak end of the spectrum. Largely allowing any reordering unless the operations are implicitly ordered by certain dependencies, the architecture demands special care from the programmer in exchange for promises of great efficiency. (Perhaps this is because ARM first saw success targeting mobile computers such as smartphones, while Intel and AMD have for a long time focused on stationary computing, where performance (at least power consumption) is not as critical.) As a result, the ARMv8 architecture supports many types of barriers–the DataMemoryBarrier (extending only to the local caches), DataSystemBarrier (reaching all the way to the point of coherency, i.e. synchronizing over all the connect cores) and the InstructionSynchronizationBarrier (affecting only the loading of instructions onto the CPU)–many of which also take arguments indicating whether they should apply to loads, stores, or both. In comparison to x86, programming on ARM is thus more complex, but the gain lies in the performance of the chip.
 </p>
 <h3>Rounding off</h3>
 <p>
