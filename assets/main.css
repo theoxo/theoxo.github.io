@@ -40,6 +40,28 @@ a:hover {
   color:#727272;
 }
 
+.computer-architecture {
+  color: #287FC8;
+  padding: 3px;
+  border: 1px solid #287FC8;
+}
+
+.computer-architecture:hover {
+  color: #F0F0F0;
+  background-color: #287FC8;
+}
+
+.tutorial {
+  color: #183F83;
+  padding: 3px;
+  border: 1px solid #183F83;
+}
+
+.tutorial:hover {
+  color: #F0F0F0;
+  background-color: #183F83;
+}
+
 .wrapper {
   width:860px;
   margin:0 auto;
@@ -122,9 +144,10 @@ header li:last-child a {
 
 header ul a {
   line-height:1;
-  font-size:11px;
+  font-size:16px;
   display:block;
   text-align:center;
+  vertical-align: middle;
   padding-top:6px;
   height:34px;
 }
@@ -148,6 +171,10 @@ header ul a strong {
   font-size:14px;
   display:block;
   color:#222;
+}
+
+i {
+  vertical-align: middle;
 }
 
 section {
