@@ -51,16 +51,39 @@ a:hover {
   background-color: #287FC8;
 }
 
-.tutorial {
+.artificial-intelligence {
   color: #183F83;
   padding: 3px;
   border: 1px solid #183F83;
 }
 
-.tutorial:hover {
+.artificial-intelligence:hover {
   color: #F0F0F0;
   background-color: #183F83;
 }
+
+.tutorial {
+  color: #bd4762;
+  padding: 3px;
+  border: 1px solid #bd4762;
+}
+
+.tutorial:hover {
+  color: #F0F0F0;
+  background-color: #bd4762;
+}
+
+.misc {
+  color: #d88a91;
+  padding: 3px;
+  border: 1px solid #d88a91;
+}
+
+.misc:hover {
+  color: #F0F0F0;
+  background-color: #d88a91;
+}
+
 
 .wrapper {
   width:860px;
