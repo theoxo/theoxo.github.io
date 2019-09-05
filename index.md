@@ -6,17 +6,16 @@ subtitle: Home
 <p> Hi!
     I'm Theo Olausson, a 4th year Informatics student at the
     <a href="https://www.ed.ac.uk/informatics">University of Edinburgh</a>.
-    I'm interested in computer architecture
-    (specifically ensuring correctness of memory and caches
-    during program execution), machine learning, and maths more generally.
+    I'm interested in applying mathematics to problems in computer science,
+    such as for example ensuring correctness of memory and caches
+    during program execution, or finding patterns in data.
 </p>
 <p>
     What I enjoy the most in life is solving difficult problems, especially
-    if I need to learn some new skills along the way.
-    I consider myself lucky to have had the pleasure of being a research intern
-    at <a href="https://www.arm.com">Arm</a> this summer,
-    and to also have spent time as a research assistant at my university before.
-    I hope to continue carrying out research in the future.
+    if I need to learn some new skills along the way. I consider myself
+    lucky to have spent time as a research intern at both <a href="https://www.arm.com">Arm</a>
+    and the Institute for Computing Systems Architecture at my university,
+    and hope to continue carrying out research in the future.
 </p>
 <p>
     Recently I've decided to start a <a href="/blog">blog</a>, where I will
