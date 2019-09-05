@@ -6,8 +6,8 @@ excerpt_separator: </p>
 topics: [misc]
 ---
 <p>
-Today was my last day as a research intern at <a href="https://www.arm.com">Arm
-</a>. Though I feel relieved to have finished my work and am looking forward
+Today was my last day as a research intern at <a href="https://www.arm.com">Arm</a>.
+Though I feel relieved to have finished my work and am looking forward
 to going home, leaving a job you have really enjoyed is always bittersweet.
 </p>
 <p>
