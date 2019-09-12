@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Theo Olausson
+layout: subpage
+title: Theo X Olausson
 subtitle: A layperson's introduction to memory consistency
 topics: [computer-architecture, tutorial]
 ---
