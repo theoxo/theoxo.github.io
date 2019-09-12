@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Theo Olausson
+layout: subpage
+title: Theo X Olausson
 subtitle: Leaving Arm
 excerpt_separator: </p>
 topics: [misc]
