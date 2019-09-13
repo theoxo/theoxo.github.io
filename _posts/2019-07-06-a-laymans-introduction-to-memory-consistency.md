@@ -1,11 +1,11 @@
 ---
-layout: default
-title: Theo Olausson
+layout: subpage
+title: Theo X Olausson
 subtitle: A layperson's introduction to memory consistency
 topics: [computer-architecture, tutorial]
 ---
 <p>
-Last Christmas I was reading <a href="https://dl.acm.org/citation.cfm?id=2028905"><em>A primer on memory consistency and cache coherence</em></a> in preparation for an internship. It’s a brilliant book, and covers both memory consistency and cache coherence–two fundamental aspects of modern computer architecture–in great detail. There was however one slight issue: <b>I was getting none (or at least very little) of it</b>, especially the memory consistency chapters. Now, a year and a half later, I feel as if I am finally getting the hang of it, and today I therefore wanted to offer you a perhaps slightly more accessible introduction to the topic.
+Last Christmas I was reading <a href="https://dl.acm.org/citation.cfm?id=2028905"><em>A primer on memory consistency and cache coherence</em></a> in preparation for an internship. It’s a brilliant book, and covers both memory consistency and cache coherence–two fundamental aspects of modern computer architecture–in great detail. There was however one slight issue: I was getting <em>none</em> (or at least very little) of the memory consistency chapters. Now, a year and a half later, I feel as if I am finally getting the hang of it, and today I therefore wanted to offer you a perhaps slightly more accessible introduction to the topic.
 </p>
 
 <h3>What is Memory Consistency and what is a Memory Consistency Model?</h3>
@@ -95,7 +95,7 @@ Ouch! This largely follows from the fact that specifications are often (even to 
 Nonetheless, as the title of the paper might suggest, it turns out that x86 is “kind of” like TSO (and kind of not), which the authors show with the help of a series of litmus tests (very, very short programs ran many times over on the processor to see which ordering of accesses is possible). We thus expect x86 to support a fence instruction, and indeed it does: aptly named mfence, the instruction guarantees that all memory accesses before the mfence become globally visible before any of the instructions which follow it do. In order to avoid the full overhead of a mfence when only parts of its functionality are actually required, x86 also supports lfence and sfence, ordering only loads and stores (respectively).
 </p>
 <p>
-ARM’s architecture(s), like the ARMv8 64-bit, fall on the weak end of the spectrum. Largely allowing any reordering unless the operations are implicitly ordered by certain dependencies, the architecture demands special care from the programmer in exchange for promises of great efficiency. (Perhaps this is because ARM first saw success targeting mobile computers such as smartphones, while Intel and AMD have for a long time focused on stationary computing, where performance (at least power consumption) is not as critical.) As a result, the ARMv8 architecture supports many types of barriers–the DataMemoryBarrier (extending only to the local caches), DataSystemBarrier (reaching all the way to the point of coherency, i.e. synchronizing over all the connect cores) and the InstructionSynchronizationBarrier (affecting only the loading of instructions onto the CPU)–many of which also take arguments indicating whether they should apply to loads, stores, or both. In comparison to x86, programming on ARM is thus more complex, but the gain lies in the performance of the chip.
+ARM’s architecture(s), like the ARMv8 64-bit, fall on the weak end of the spectrum. Largely allowing any reordering unless the operations are implicitly ordered by certain dependencies, the architecture demands special care from the programmer in exchange for promises of great efficiency. (Perhaps this is because ARM first saw success targeting mobile computers such as smartphones, while Intel and AMD have for a long time focused on stationary computing, where performance (at least power consumption) is not as critical.) As a result, the ARMv8 architecture supports many types of barriers–the DataMemoryBarrier (which specifies only ordering), DataSystemBarrier (which specifies ordering and also won't complete until all previous accesses have) and the InstructionSynchronizationBarrier (affecting only the loading of instructions onto the CPU)–many of which also take arguments indicating whether they should apply to loads, stores, or both. In comparison to x86, programming on ARM is thus more complex, but the gain lies in the performance of the chip.
 </p>
 <h3>Rounding off</h3>
 <p>
