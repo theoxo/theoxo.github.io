@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Theo Olausson
+layout: subpage
+title: Theo X Olausson
 subtitle: All books are equal, but some books are more equal than others
 excerpt_separator: </p>
 topics: [artificial-intelligence, misc]
