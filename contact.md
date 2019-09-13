@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Theo Olausson
+layout: subpage
+title: Theo X Olausson
 subtitle: Contact
 ---
 If you want to get in contact with me, please do so by sending an email to:

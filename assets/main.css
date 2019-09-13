@@ -1,5 +1,6 @@
 body {
   background-color:#F0F1F4;
+  background: url(/assets/bg.jpg);
   text-align: center;
   padding:50px;
   font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -29,51 +30,51 @@ a:hover {
 }
 
 .right a:hover {
-  color:#222;
+  color:#202124;
 }
 
 .computer-architecture {
-  color: #287FC8;
+  color: #55BDCE;
   padding: 3px;
-  border: 1px solid #287FC8;
+  border: 1px solid #55BDCE;
 }
 
 .computer-architecture:hover {
   color: #F0F0F0;
-  background-color: #287FC8;
+  background-color: #55BDCE;
 }
 
 .artificial-intelligence {
-  color: #183F83;
+  color: #55BDCE;
   padding: 3px;
-  border: 1px solid #183F83;
+  border: 1px solid #55BDCE;
 }
 
 .artificial-intelligence:hover {
   color: #F0F0F0;
-  background-color: #183F83;
+  background-color: #55BDCE;
 }
 
 .tutorial {
-  color: #bd4762;
+  color: #55BDCE;
   padding: 3px;
-  border: 1px solid #bd4762;
+  border: 1px solid #55BDCE;
 }
 
 .tutorial:hover {
   color: #F0F0F0;
-  background-color: #bd4762;
+  background-color: #55BDCE;
 }
 
 .misc {
-  color: #d88a91;
+  color: #55BDCE;
   padding: 3px;
-  border: 1px solid #d88a91;
+  border: 1px solid #55BDCE;
 }
 
 .misc:hover {
   color: #F0F0F0;
-  background-color: #d88a91;
+  background-color: #55BDCE;
 }
 
 .split {
@@ -89,7 +90,6 @@ a:hover {
 .left {
   left: 0;
   width: 40%;
-  background: url(/assets/bg.jpg);
 }
 
 /* Control the right side */
@@ -97,8 +97,8 @@ a:hover {
   right: 0;
   width: 60%;
   text-align: left;
-  background-color: #F0F1F4;
-  color: #222;
+  background-color: rgba(240, 241, 244, 0.95);
+  color: #202124;
 }
 
 .centered {
