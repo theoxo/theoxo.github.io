@@ -29,6 +29,10 @@ a {
   text-decoration:none;
 }
 
+.right a {
+  color: #25557D;
+}
+
 a:hover {
   color:#F0F1F4;
 }
@@ -38,47 +42,47 @@ a:hover {
 }
 
 .computer-architecture {
-  color: #55BDCE;
+  color: #1B9FB8;
   padding: 3px;
-  border: 1px solid #55BDCE;
+  border: 1px solid #1B9FB8;
 }
 
 .computer-architecture:hover {
   color: #F0F0F0;
-  background-color: #55BDCE;
+  background-color: #1B9FB8;
 }
 
 .artificial-intelligence {
-  color: #55BDCE;
+  color: #1B9FB8;
   padding: 3px;
-  border: 1px solid #55BDCE;
+  border: 1px solid #1B9FB8;
 }
 
 .artificial-intelligence:hover {
   color: #F0F0F0;
-  background-color: #55BDCE;
+  background-color: #1B9FB8;
 }
 
 .tutorial {
-  color: #55BDCE;
+  color: #1B9FB8;
   padding: 3px;
-  border: 1px solid #55BDCE;
+  border: 1px solid #1B9FB8;
 }
 
 .tutorial:hover {
   color: #F0F0F0;
-  background-color: #55BDCE;
+  background-color: #1B9FB8;
 }
 
 .misc {
-  color: #55BDCE;
+  color: #1B9FB8;
   padding: 3px;
-  border: 1px solid #55BDCE;
+  border: 1px solid #1B9FB8;
 }
 
 .misc:hover {
   color: #F0F0F0;
-  background-color: #55BDCE;
+  background-color: #1B9FB8;
 }
 
 .split {
