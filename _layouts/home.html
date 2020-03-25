@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>{{ page.title }} | {{page.subtitle}}</title>
-     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>{{ page.title }} | {{page.subtitle}}</title>
+    <script src="https://kit.fontawesome.com/4b1c35e57d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="/assets/main.css">
   </head>
-  <body style="background-image: url(/assets/bg.jpg);">
-    <div class="centered">
+  <body>
       <header>
-        <img src="/assets/me.jpg" class="profile-photo" alt="A photo of me."><br/>
-        <h1>{{ page.title }}</h1>
+        <nav>
+          <a href="/"><img src="/assets/logo.svg" height="70"></a>
         <ul>
-            <li><a href="/"><i class="material-icons">home</i>Home</a></li>
-            <li><a href="/blog"><i class="material-icons">library_books</i>Blog</a></li>
-            <li><a href="/contact"><i class="material-icons">email</i>Contact</a></li>
+          <li><a href="mailto: theoxolausson@gmail.com"><i><i class="fas fa-envelope"></i></i></a></li>
+            <li><a href="https://github.com/theoxo"><i><i class="fab fa-github"></i></i></a></li>
+            <li><a href="/assets/resume.pdf"><b>CV &#8599;</b></a></li>
         </ul>
-      </header>
-      <section>
-        <p> Hi!
-            I study Informatics <a href="https://www.ed.ac.uk/informatics">@UoE</a>.
+        </nav>
+        <img src="/assets/me.jpg" style="max-width:200px; border-radius: 50%; border: solid #f0f1f4 2px;">
+        <h1>Theo Olausson</h1>
+        <p>
+            I study and research Informatics at the <a href="https://www.ed.ac.uk/informatics">University of Edinburgh</a>.
         </p>
         <p>
-            I'm interested in applying mathematical techniques to problems in
-            computer science. If you want to, you can find out
-            a bit more about my interests and background in my
-            <a href="/assets/resume.pdf">resume</a>.
+           My interests broadly revolve around applying mathematical techniques to difficult problems in computer science.
         </p>
+        <p>
+           Long-term, I hope to develop techniques which combine the strong guarantees of <mark>formal methods</mark>
+           with the practical usefulness of <mark>machine learning</mark> so that we can create artificially intelligent systems which are safe, interpretable, and fair.
+      </header>
+      <!--
+      <main>
+      <hr>
+      <section>
+        <header>
+          <h2> Blog </h2>
+        </header>
+        {% for post in site.posts %}
+        <aside onclick="location.href='{{ post.url }}';" style="cursor: pointer;">
+          <h3> {{ post.subtitle }} </h3>
+          <p> {{ post.excerpt }} <a href="{{ post.url }}">Read more &rarr;</a></p>
+          {% for topic in post.topics %}
+          <sup> {{ topic }} </sup>
+          {% endfor %}
+          <p><small> {{ post.date | date: '%B %d, %Y' }} </small></p>
+          </aside>
+        {% endfor %}
       </section>
-    </div>
+      </main>
+      -->
   </body>
 </html>
