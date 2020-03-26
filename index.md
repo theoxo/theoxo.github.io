@@ -1,5 +1,4 @@
 ---
 layout: home
-title: Theo X Olausson
-subtitle: Home
+title: Theo Olausson
 ---
