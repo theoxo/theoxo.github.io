@@ -34,7 +34,7 @@ body {
     color: var(--color-text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     line-height: var(--line-height);
-    margin: 0;
+    margin: 0 5rem;
     overflow-x: hidden;
 }
 
@@ -203,7 +203,6 @@ a:hover {
 }
 
 a b,
-a em,
 a i,
 a strong,
 button {
@@ -227,7 +226,6 @@ button {
     color: var(--color-bg);
 }
 
-a em,
 a i {
     border: 2px solid var(--color);
     border-radius: var(--border-radius);
@@ -332,6 +330,7 @@ table tr td:first-child {
 blockquote {
     display: block;
     font-size: x-large;
+    font-style: italic;
     line-height: var(--line-height);
     margin: 1rem auto;
     max-width: var(--width-card-medium);
@@ -348,3 +347,6 @@ blockquote footer {
 }
 
 /* Custom styles */
+img {
+  padding: 1rem;
+}

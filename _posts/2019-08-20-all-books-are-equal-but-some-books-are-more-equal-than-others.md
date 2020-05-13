@@ -1,12 +1,12 @@
 ---
-layout: subpage
-title: Theo X Olausson
-subtitle: All books are equal, but some books are more equal than others
-excerpt_separator: </p>
+layout: blogpost
+title: Theo Olausson
+subtitle: All Books Are Equal, but Some Books Are More Equal Than Others
 topics: [artificial-intelligence, misc]
 ---
+<h2>All Books Are Equal, but Some Books Are More Equal Than Others</h2>
 <p>
-Last week I finished reading Swedish-American physicist Max Tegmark's book "Life 3.0",
+Last week I finished reading Swedish-American physicist Max Tegmark's book <em>Life 3.0</em>,
 which sets out to answer the question that seems to be on everyone's mind lately:
 how will advances in artificial intelligence impact the future of humankind?
 </p>
@@ -23,7 +23,7 @@ subject a healthy dose of skepticism seems to be in order.
 </p>
 <p>
 Last year I was reading a similar book:
-"What To Do When Machines Do Everything: How to Get Ahead in a World of AI, Algorithms, Bots, and Big Data"
+<em>What To Do When Machines Do Everything: How to Get Ahead in a World of AI, Algorithms, Bots, and Big Data</em>
 (by B. Pring, M. Frank, and P. Roehrig). Unfortunately, the most interesting
 part of this book was its ridiculously long title.
 Drawing weak comparisons between
@@ -41,7 +41,7 @@ which is devoted to discussing the history and future of our Universe reveals
 where he feels most confident, the whole book
 radiates with a scientific curiosity and wisdom that I haven't
 felt since Daniel Kahneman's <a href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow">
-Thinking, Fast and Slow</a>, while still managing to be a fair bit easier to read
+<em>Thinking, Fast and Slow</em></a>, while still managing to be a fair bit easier to read
 than the latter.
 </p>
 <p>
@@ -55,7 +55,7 @@ what the future may hold. All of this is also backed up by his own personal
 beliefs, though he presents these in a way that makes it clear that he
 welcomes you to disagree as long as you've given it enough thought.
 Finally, he outlines the work him and his colleagues at the
-<a href="https://futureoflife.org">Future of Life Institute</a> are doing
+<a href="https://futureoflife.org"><em>Future of Life Institute</em></a> are doing
 to promote research that they believe will help ensure life
 will continue to strive in our Universe.
 </p>
