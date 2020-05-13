@@ -44,6 +44,9 @@
         </header>
         {% for post in site.posts %}
         <aside onclick="location.href='{{ post.url }}';" style="cursor: pointer;">
+          {% if post.frontimg %}
+          <img src="{{ post.frontimg }}" style="height:150px;">
+          {% endif %}
           <h3> {{ post.subtitle }} </h3>
           {{ post.excerpt | strip_html | truncatewords: 20 }}
           <br>
