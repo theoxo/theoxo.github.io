@@ -2,6 +2,7 @@
 layout: blogpost
 title: Theo Olausson
 subtitle: A Layperson's Introduction to Memory Consistency
+frontimg: /assets/SCdiagram.png
 topics: [computer-architecture, tutorial]
 ---
 <h2>A Layperson's Introduction to Memory Consistency</h2>
