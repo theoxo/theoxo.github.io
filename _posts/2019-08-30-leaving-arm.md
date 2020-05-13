@@ -4,7 +4,6 @@ title: Theo Olausson
 subtitle: Leaving Arm
 topics: [misc]
 ---
-<h2> Leaving Arm </h2>
 <p>
 Today was my last day as a research intern at <a href="https://www.arm.com">Arm</a>.
 Though I feel relieved to have finished my work and am looking forward
