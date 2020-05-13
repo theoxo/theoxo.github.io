@@ -4,7 +4,6 @@ title: Theo Olausson
 subtitle: All Books Are Equal, but Some Books Are More Equal Than Others
 topics: [artificial-intelligence, misc]
 ---
-<h2>All Books Are Equal, but Some Books Are More Equal Than Others</h2>
 <p>
 Last week I finished reading Swedish-American physicist Max Tegmark's book <em>Life 3.0</em>,
 which sets out to answer the question that seems to be on everyone's mind lately:

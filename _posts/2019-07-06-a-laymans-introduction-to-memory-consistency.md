@@ -5,7 +5,6 @@ subtitle: A Layperson's Introduction to Memory Consistency
 frontimg: /assets/SCdiagram.png
 topics: [computer-architecture, tutorial]
 ---
-<h2>A Layperson's Introduction to Memory Consistency</h2>
 <p>
 Last Christmas I was reading <a href="https://dl.acm.org/citation.cfm?id=2028905"><em>A primer on memory consistency and cache coherence</em></a> in preparation for an internship. It’s a brilliant book, and covers both memory consistency and cache coherence &mdash; two fundamental aspects of modern computer architecture &mdash; in great detail. There was however one slight issue: I was getting <em>none</em> (or at least very little) of the memory consistency chapters. Now, a year and a half later, I feel as if I am finally getting the hang of it, and today I therefore wanted to offer you a perhaps slightly more accessible introduction to the topic.
 </p>
