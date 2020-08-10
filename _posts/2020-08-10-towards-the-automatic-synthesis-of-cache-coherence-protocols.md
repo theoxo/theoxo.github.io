@@ -6,7 +6,7 @@ frontimg: /assets/dissertation1.jpg
 topics: [computer-architecture, synthesis]
 ---
 <p>Earlier this year I submitted my 4th/senior year dissertation, Towards the Automatic Synthesis of Cache Coherence Protocols. The dissertation summarized and presented work which I had been carrying out under the supervison of <a href="http://homepages.inf.ed.ac.uk/vnagaraj/">Dr. Vijay Nagarajan</a> since my sophomore year, and was awarded an A(2).
-<br>
+<br><br>
 <a href="/assets/dissertation1.pdf">Link to dissertation PDF</a>
 </p>
 
@@ -15,7 +15,7 @@ topics: [computer-architecture, synthesis]
 the automatic synthesis of
 cache coherence protocols.
 Motivated by the insight that even the most sophisticated current
-approaches still assume the existence of a correct \emph{Stable State Protocol} (SSP),
+approaches still assume the existence of a correct <em>Stable State Protocol</em> (SSP),
 an abstract specification of the protocol
 under atomic conditions,
 it targets these abstractions in particular.
