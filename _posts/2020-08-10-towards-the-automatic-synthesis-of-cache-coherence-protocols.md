@@ -4,6 +4,7 @@ title: Theo Olausson
 subtitle: Dissertation | Towards the Automatic Synthesis of Cache Coherence Protocols
 frontimg: /assets/dissertation1.jpg
 topics: [computer-architecture, synthesis]
+show: true
 ---
 <p>Earlier this year I submitted my 4th/senior year dissertation, Towards the Automatic Synthesis of Cache Coherence Protocols. The dissertation summarized and presented work which I had been carrying out under the supervison of <a href="http://homepages.inf.ed.ac.uk/vnagaraj/">Dr. Vijay Nagarajan</a> since my sophomore year, and was awarded an A(2).
 <br><br>

@@ -38,6 +38,7 @@
           <h2> Blog </h2>
         </header>
         {% for post in site.posts %}
+        {% if post.show %}
         <aside onclick="location.href='{{ post.url }}';" style="cursor: pointer;">
           {% if post.frontimg %}
           <img src="{{ post.frontimg }}" style="height:150px;">
@@ -52,6 +53,7 @@
           {% endfor %}
           <p><small> {{ post.date | date: '%B %d, %Y' }} </small></p>
           </aside>
+        {% endif %}
         {% endfor %}
       </section>
       </main>

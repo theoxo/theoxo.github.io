@@ -4,6 +4,7 @@ title: Theo Olausson
 subtitle: arXiv Preprint | Quantitative Analysis of Image Classification Techniques for Memory-Constrained Devices
 frontimg: /assets/multi-fastgrnn-web.jpg
 topics: [artificial-intelligence, machine-learning, paper]
+show: true
 ---
 <p>
 Super happy to share that today some of my fellow students and I put up a preprint
