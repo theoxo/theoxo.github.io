@@ -6,8 +6,8 @@ topics: [paper-review, artificial-intelligence, machine-learning, formal-verific
 show: true
 ---
 <p>
-I love machine learning. It always fascinates me how what one may
-at first dismiss as simple curve fitting can in fact overcome seemingly insurmountable tasks.
+I love machine learning. It has always fascinated me how what one may
+at first dismiss as simple curve fitting can overcome seemingly insurmountable tasks.
 Plus, it's just a whole lot of fun training a model and constructing some nice plots.
 </p>
 
@@ -15,7 +15,7 @@ Plus, it's just a whole lot of fun training a model and constructing some nice p
 At the same time, there are aspects of machine learning that worry me, particularly
 as it gets "deeper". (One such worry I have is that the fact that the models are becoming so large;
 see my <a href="/2020/05/12/quant-analysis-arxiv.html">earlier blogpost</a> on memory-constrained ML.)
-My biggest worry is how we can actually tell what is happening in a model, and how it
+My biggest worry of all is how we can actually tell what is happening in a model, and how it
 will react if pushed outside of its comfort zone.
 Ultimately, if ML-based systems are to be rolled out across society, it seems like a good idea
 to know that we can make certain guarantees about their behaviour. 
