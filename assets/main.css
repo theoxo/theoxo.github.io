@@ -165,7 +165,7 @@ ul li {
 p {
     text-align: justify;
     text-justify: inter-word;
-    max-width: 600px;
+    max-width: 750px;
     margin: 0.75rem auto;
     padding: 0;
 }
