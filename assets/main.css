@@ -163,6 +163,8 @@ ul li {
 }
 
 p {
+    text-align: justify;
+    text-justify: inter-word;
     max-width: 600px;
     margin: 0.75rem 0;
     padding: 0;
