@@ -9,6 +9,11 @@ img {
     margin: auto;
 }
 
+ul.inline {
+    margin: 0;
+    padding: 0;
+}
+
 ul.inline li {
   float: left;
   width: auto;
