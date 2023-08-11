@@ -6,9 +6,6 @@ body {
 }
 
 ul.inline li {
-  width: auto;
   float: left;
-  display: flex;
-  list-style:none;
 }
 
