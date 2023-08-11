@@ -4,3 +4,11 @@ body {
     padding 1rem;
     max-width: 40rem;
 }
+
+ul.inline li {
+  width: auto;
+  float: left;
+  display: flex;
+  list-style:none;
+}
+
